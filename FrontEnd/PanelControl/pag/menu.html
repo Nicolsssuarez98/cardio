@@ -1,0 +1,533 @@
+
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target ="#navbar"
+        aria-expanded="false" aria-controls="navbar">
+          
+          <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+
+            
+        </button>
+        <a class= "navbar-brand" href"#">Cardiovascular</a>
+
+      </div>
+
+      <p class="navbar-text pull-right" >
+        Conectado <a class="navbar-link">
+        </a>
+      </p>
+
+      <div id="navbar" class="navbar-collapse collapse">
+
+        <ul class="nav navbar-nav">
+          <li><a id="ControlPanelUser" href="#usuarios" class="inf">Usuarios</a></li>
+          <li><a id="ControlPanelPaciente" href="#paciente" class="inf">Pacientes</a></li>
+          <li><a id="ControlPanelCum_Programa" href="#cum_programa" class="inf">Cumplimiento Programas</a></li>
+          
+          <li class="dropdown">
+            <a id="patologia" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded= "false">
+            Patologia de Riesgo <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a id="ControlPanelHipertensionArterial" href="#hipertension_arterial" class="inf">Hipertension Arterial</a></li>
+              <li><a id="ControlPanelHipercolesterolemia" href="#hipercolesterolemia" class="inf">Hipercolesterolemia</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a id="ControlPanelDeabetes" href="#deabetes" class="inf">Diabetes</a></li>
+              <li><a href="#" class="inf">Obesidad</a></li>
+            </ul>                       
+          </li>
+          <li><a id="ControlPanelMedicamento" href="#medicamento" class="inf">Medicamentos</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded= "false">
+            Opciones <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a id="ControlPanelBarrio" href="#barrios" class="inf">Barrios</a></li>
+              <li><a id="ControlPanelCiudad" href="#ciudad" class="inf">Ciudades</a></li>
+            </ul>                       
+          </li>
+          <li><a id="CerrarSesion">Salir</a></li>
+        </ul>
+      </div>
+  </div>      
+</nav>
+
+<div id="n_img" class="container">
+  <img src="img/fondo1.jpg" class="img-responsive" alt="Cinque Terre" >
+</div>
+
+<!-- -------------------------------------------------- USUARIOS ---------------------------------------------------- -->
+
+<div id="usuarios" class="container center-block oculto">
+    <div id="alertas_usuarios"> </div>
+    
+    <h1 class="blue center title">Gestion y Control de Usuarios</h1>
+    <button class="btn btn-primary agregar" id="agregarUser">Nuevo Usuario <span class="glyphicon glyphicon-plus"></span></button>
+    
+    <div class="container">
+
+      <form class="form-horizontal hidden" id="EditarUser" >
+        <div class="form-group">
+          <label for="edituser" class="col-sm-offset-3 col-sm-2 control-label">Usuario:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="edituser" placeholder="Usuario" required disabled>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="editpass" class="col-sm-offset-3 col-sm-2 control-label">Contraseña:</label>
+          <div class="col-sm-4">
+            <input type="password" class="form-control" id="editpass" placeholder="Contrseña" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="editrol" class="col-sm-offset-3 col-sm-2 control-label">Rol:</label>
+          <div class="col-sm-4">
+            <select id="editrol" class="form-control">
+              <option value="2">Administrador</option>
+              <option value="1">Super Adiministrador</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="editesatdo" class="col-sm-offset-3 col-sm-2 control-label">Estado:</label>
+          <div class="col-sm-4">
+            <select id="editestado" class="form-control">
+              <option value="1">Activo</option>
+              <option value="2">Inactivo</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">   
+            <button type="button" class="btn btn-default" id="CancelarActualizarUser">Cancelar</button>
+            <button type="submit" class="btn btn-success" >Actualizar</button>        
+        </div>
+      </form>
+   
+      <form class="form-horizontal hidden" id="CrearNuevoUser">
+        <div class="form-group">
+          <label for="user" class="col-sm-offset-3 col-sm-2 control-label">Usuario:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="user" placeholder="Usuario" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="pass" class="col-sm-offset-3 col-sm-2 control-label">Contraseña:</label>
+          <div class="col-sm-4">
+            <input type="password" class="form-control" id="pass" placeholder="Contrseña" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="rol" class="col-sm-offset-3 col-sm-2 control-label">Rol:</label>
+          <div class="col-sm-4">
+            <select id="rol" class="form-control">
+              <option value="2">Administrador</option>
+              <option value="1">Super Adiministrador</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="esatdo" class="col-sm-offset-3 col-sm-2 control-label">Estado:</label>
+          <div class="col-sm-4">
+            <select id="estado" class="form-control">
+              <option value="1">Activo</option>
+              <option value="2">Inactivo</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+            <button type="button" class="btn btn-default" id="CancelarCrearUser">Cancelar</button>
+            <button type="submit" class="btn btn-success" >Crear</button>        
+        </div>
+      </form>
+    </div>
+          <div class="table-responsive">
+            <table id="usuarios_table" class="table table-hover">        
+              <thead>
+                <tr class="blue">
+                  <td>Usuario</td>
+                  <td>Rol</td>
+                  <td>Estado</td>
+                  <td>Editar</td>
+                  <td>Eliminar</td>
+                </tr>
+              </thead>
+              <tbody id="users">
+              </tbody>
+            </table>
+          </div>
+</div>
+
+<!-- -------------------------------------------------- Hiper ---------------------------------------------------- -->
+
+<div id="hipertension_arterial" class="container center-block oculto">
+  <div id="alertasss"> </div>
+  
+  <h1 class="blue center title">Hipertension Arterial</h1>
+  <button class="btn btn-primary agregar" id="agregarHiper">Nuevo Hipertension Arterial <span class="glyphicon glyphicon-plus"></span></button>
+  
+  <div class="container">
+
+    <form class="form-horizontal hidden" id="EditarHiper" onKeypress="if (event.keyCode == 13) event.returnValue = false;">
+      <div class="form-group">
+        <label for="editid_hiper" class="col-sm-offset-3 col-sm-2 control-label" >Id_hiper:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="editid_hiper" placeholder="Id_hiper"  disabled>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="editdocumento" class="col-sm-offset-3 col-sm-2 control-label">Documento:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="editdocumento" placeholder="Documento" disabled >
+        </div>
+      </div>  
+
+      
+
+      <div class="form-group">
+        <label for="editfecha" class="col-sm-offset-3 col-sm-2 control-label">Fecha examen:</label>
+        <div class="col-sm-4">
+          <input type="date" class="form-control" id="editfecha" placeholder="Fecha" >
+        </div>
+      </div>
+      
+     
+      <div class="form-group">
+        <label for="editcf_tensionales" class="col-sm-offset-3 col-sm-2 control-label">Cf tensionales:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="editcf_tensionales" placeholder="Cf tensionales" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="edittm_signos" class="col-sm-offset-3 col-sm-2 control-label">Tm signos vitales:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="edittm_signos" placeholder="Tm signos vitales" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="editconst_medic" class="col-sm-offset-3 col-sm-2 control-label">const medico general:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="editconst_medic" placeholder="Const medico general" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="editconst_enf" class="col-sm-offset-3 col-sm-2 control-label">const enfermeria:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="editconst_enf" placeholder="Cons enfermeria" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="editconst_nutri" class="col-sm-offset-3 col-sm-2 control-label">const nutrición:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="editconst_nutri" placeholder="Const nutricion" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="editglicemia" class="col-sm-offset-3 col-sm-2 control-label">Glicemia Basal:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="editglicemia" placeholder="Glicemia basal" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="edithemo" class="col-sm-offset-3 col-sm-2 control-label">Hemoglobina:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="edithemo" placeholder="Hemoglobina" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="edithematocritos" class="col-sm-offset-3 col-sm-2 control-label">Hematocritos:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="edithematocritos" placeholder="Hematocritos" >
+        </div>
+      </div>
+      
+
+      <div class="form-group">
+        <label for="editcolesterol_total" class="col-sm-offset-3 col-sm-2 control-label">Colesterol total:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="editcolesterol_total" placeholder="Colesterol total" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="editcolesterol_hdl" class="col-sm-offset-3 col-sm-2 control-label">Colesterol hdl:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="editcolesterol_hdl" placeholder="Colesterol hdl" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="edittrigliceridos" class="col-sm-offset-3 col-sm-2 control-label">Trigliceridos:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="edittrigliceridos" placeholder="Triglicerios" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="editpotasio" class="col-sm-offset-3 col-sm-2 control-label">Potasio:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="editpotasio" placeholder="Potasio" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="editcreatinina" class="col-sm-offset-3 col-sm-2 control-label">Creatinina:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="editcreatinina" placeholder="Creatinina" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="edituroanalisis" class="col-sm-offset-3 col-sm-2 control-label">Uroanalisis:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="edituroanalisis" placeholder="Uroanalisis" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="editekg" class="col-sm-offset-3 col-sm-2 control-label">Ekg:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="editekg" placeholder="Ekg" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="editmedicamentos" class="col-sm-offset-3 col-sm-2 control-label">Medicamento:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="editmedicamentos" placeholder="Medicamentos" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="editedu_grupal" class="col-sm-offset-3 col-sm-2 control-label">Edu_grupal:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="editedu_grupal" placeholder="Edu_grupal" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="editobservaciones" class="col-sm-offset-3 col-sm-2 control-label">Observaciones:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="editobservaciones" placeholder="Observaciones" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="editacciones_real" class="col-sm-offset-3 col-sm-2 control-label">Acciones realizar:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="editacciones_real" placeholder="Acciones realizar" >
+        </div>
+      </div>
+      <div class="form-group">   
+          <button type="button" class="btn btn-default" id="CancelarActualizarhiper">Cancelar</button>
+          <button type="submit" class="btn btn-success" >Actualizar</button>        
+      </div>
+    </form>
+ 
+    <form class="form-horizontal hidden" id="CrearNuevoHiper"   >
+      <div class="form-group">
+        <label for="id_hiper" class="col-sm-offset-3 col-sm-2 control-label" >Id_hiper:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="id_hiper" placeholder="Id_hiper"  disabled>
+        </div>
+      </div>
+      
+
+      <div class="form-group">
+          <label for="documento" class="col-sm-offset-3 col-sm-2 control-label">Documento:</label>
+          <div class="col-sm-4">
+              <select id="documento" class="form-control">
+                 <option value=""> listo</option> 
+                </select>
+          </div>
+        </div>
+
+      <div class="form-group">
+        <label for="fecha" class="col-sm-offset-3 col-sm-2 control-label">Fecha examen:</label>
+        <div class="col-sm-4">
+          <input type="date" class="form-control" id="fecha" placeholder="Fecha" >
+        </div>
+      </div>
+      
+     
+      <div class="form-group">
+        <label for="cf_tensionales" class="col-sm-offset-3 col-sm-2 control-label">Cf tensionales:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="cf_tensionales" placeholder="Cf tensionales" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="tm_signos" class="col-sm-offset-3 col-sm-2 control-label">Tm signos vitales:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="tm_signos" placeholder="Tm signos vitales" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="const_medic" class="col-sm-offset-3 col-sm-2 control-label">const medico general:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="const_medic" placeholder="Const medico general" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="const_enf" class="col-sm-offset-3 col-sm-2 control-label">const enfermeria:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="const_enf" placeholder="Cons enfermeria" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="const_nutri" class="col-sm-offset-3 col-sm-2 control-label">const nutrición:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="const_nutri" placeholder="Const nutricion" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="glicemia" class="col-sm-offset-3 col-sm-2 control-label">Glicemia Basal:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="glicemia" placeholder="Glicemia basal" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="hemo" class="col-sm-offset-3 col-sm-2 control-label">Hemoglobina:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="hemo" placeholder="Hemoglobina" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="hema" class="col-sm-offset-3 col-sm-2 control-label">Hematocritos:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="hema" placeholder="Hematocritos" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="colesterol_total" class="col-sm-offset-3 col-sm-2 control-label">Colesterol total:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="colesterol_total" placeholder="Colesterol total" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="colesterol_hdl" class="col-sm-offset-3 col-sm-2 control-label">Colesterol hdl:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="colesterol_hdl" placeholder="Colesterol hdl" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="trigliceridos" class="col-sm-offset-3 col-sm-2 control-label">Trigliceridos:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="trigliceridos" placeholder="Triglicerios" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="potasio" class="col-sm-offset-3 col-sm-2 control-label">Potasio:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="potasio" placeholder="Potasio" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="creatinina" class="col-sm-offset-3 col-sm-2 control-label">Creatinina:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="creatinina" placeholder="Creatinina" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="uroanalisis" class="col-sm-offset-3 col-sm-2 control-label">Uroanalisis:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="uroanalisis" placeholder="Uroanalisis" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ekg" class="col-sm-offset-3 col-sm-2 control-label">Ekg:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="ekg" placeholder="Ekg" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="medicamentos" class="col-sm-offset-3 col-sm-2 control-label">Medicamento:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="medicamentos" placeholder="Medicamentos" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="edu_grupal" class="col-sm-offset-3 col-sm-2 control-label">Edu_grupal:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="edu_grupal" placeholder="Edu_grupal" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="observaciones" class="col-sm-offset-3 col-sm-2 control-label">Observaciones:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="observaciones" placeholder="Observaciones" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="acciones_real" class="col-sm-offset-3 col-sm-2 control-label">Acciones realizar:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="acciones_real" placeholder="Acciones realizar" >
+        </div>
+      </div>
+
+      <div class="form-group">
+          <button type="button" class="btn btn-default" id="CancelarCrearHiper">Cancelar</button>
+          <button type="submit" class="btn btn-success" >Crear</button>        
+      </div>
+    </form>
+  </div>
+        <div class="table-responsive">
+          <table id="hipertension_table" class="table table-hover">        
+            <thead>
+              <tr class="blue">
+                <td>Documento</td>
+                <td>Paciente</td>
+                <td>Fec Realización</td>
+                <td>Cons Medico</td>
+                <td>Cons Enfermeria</td>
+                <td>Cons Nutrición</td>      
+                <td>Medicamentos</td>
+                <td>Editar</td>                
+                <td>Eliminar</td>                
+                
+              </tr>
+            </thead>
+            <tbody id="hipers">
+            </tbody>
+          </table>
+        </div>
+</div>
+
+
+<script src="js/PanelControl.js"></script>
+
+<script src="js/PanelControlUser.js"></script>
+<script src="js/PanelControlHiper.js"></script>
+
+
+
